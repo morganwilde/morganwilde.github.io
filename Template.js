@@ -18,7 +18,11 @@ Template.prototype.generateFooter = function()
     // Analyse the path
     pathComponents = window.location.href.split('/');
     componentFilename = pathComponents[pathComponents.length - 1].split('-');
-    pageNumber = Number(componentFilename[1].split('.')[0]);
+    if (componentFilename.length > 1) {
+        pageNumber = Number(componentFilename[1].split('.')[0]);
+    } else {
+        pageNumber = 0;
+    }
 
     // Create the footer navigation
     footer = document.querySelector('footer');
