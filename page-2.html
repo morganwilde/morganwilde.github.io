@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="pages.css">
+    <script src="Template.js"></script>
+    <script src="page-2.js"></script>
+    <title>Tools and methods to begin drawing</title>
+</head>
+<body>
+    <header></header>
+
+    <h2>Tools</h2>
+
+    <p>
+        First, let's lay out all of the tools that we have from the very beginning.
+    </p>
+    <ul>
+        <li>Points</li>
+        <li>Grid</li>
+    </ul>
+    <p>
+        A point knows only the state it's in.
+    </p>
+    <ul>
+        <li>State - On/Off</li>
+    </ul>
+    <p>
+        The grid is a point container. Besides holding a bunch of points, it also has to have information about it's size. Without a specified size, there would be ambiguity as to the exact position of each dot, because a collection of n dots has n possible width and height combinations. You can only access points through the grid.
+    </p>
+    <ul>
+        <li>A collection of points</li>
+        <li>Horizontal size - width</li>
+        <li>Vertical size - height</li>
+    </ul>
+
+    <h2>Methods</h2>
+
+    <p>
+        First, we need to define a method of how to access specific points. In a 2-dimensional world you can define all possible points using a set of two basis vectors (one horizontal, one vertical):
+    </p>
+    <ul class="code">
+        <li>h = (1, 0)</li>
+        <li>v = (0, 1)</li>
+    </ul>
+    <p>
+        To define a new position, we calculate the sum of the two basis vectors. The x and y factors indicate how far along the horizontal and vertical axis do we need to go to find the point.
+    </p>
+    <div class="code">
+        position = (x * h) + (y * v) = (x, y)
+    </div>
+    <p>
+        To map between a given position (x, y) and the point number p, we need the following rule.
+    </p>
+    <div class="code">
+        map(x, y) = p = y * height + x
+    </div>
+    <p>
+        That's all we need to start drawing.
+    </p>
+
+    <footer></footer>
+</body>
+</html>

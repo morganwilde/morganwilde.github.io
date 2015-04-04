@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="pages.css">
+    <link rel="stylesheet" type="text/css" href="Point.css">
+    <link rel="stylesheet" type="text/css" href="Grid.css">
+    <script src="Template.js"></script>
+    <script src="Point.js"></script>
+    <script src="Grid.js"></script>
+    <script src="page-3.js"></script>
+    <title>Points on a grid</title>
+</head>
+<body>
+    <header></header>
+    
+    <h2>A point</h2>
+
+    <div id="placeholder-point-example" class="placeholder"></div>
+    <p>
+        This is a single point. By default, it's initial state is set to off, that's why it's a bit hard to see. You toggle between these two states using the following methods. Try to turn it on and see what it looks like then.
+    </p>
+    <div class="code">
+        <input type="button" value="call" id="button-turnOn" /> point.turnOn() <br>
+        <input type="button" value="call" id="button-turnOff" /> point.turnOff()
+    </div>
+
+    <h2>A grid</h2>
+
+    <p>
+        We collect points using a grid. Here's one below. It's width is 21 points and height is 21 points.
+    </p>
+    <div id="placeholder-grid-example" class="placeholder"></div>
+    <p>
+        The grid has 2 dimensions, so to select a specific point, you have to provide how far along each dimension it is located. The horizontal dimension is organised left to right, the vertical dimension is top to bottom. Here are some locations for reference.
+    </p>
+    <ul>
+        <li><span class="code">(0, 0)</span> - top left</li>
+        <li><span class="code">(20, 0)</span> - top right</li>
+        <li><span class="code">(20, 20)</span> - bottom right</li>
+        <li><span class="code">(0, 20)</span> - bottom left</li>
+        <li><span class="code">(10, 10)</span> - center</li>
+    </ul>
+    <div class="code">
+        x = <input type="text" value="0" id="text-grid-x" /><span class="error"></span><br>
+        y = <input type="text" value="0" id="text-grid-y" /><span class="error"></span><br>
+        <input type="button" value="call" id="button-grid-turnOn" /> grid.point(x, y).turnOn()<br>
+        <input type="button" value="call" id="button-grid-turnOff" /> grid.point(x, y).turnOff()
+    </div>
+
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.point {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+}
+    /* Point states */
+    .point.on {
+        background-color: black;
+    }
+    .point.off {
+        background-color: #CCC;
+    }

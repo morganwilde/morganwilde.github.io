@@ -1,0 +1,41 @@
+body {
+    width: 500px;
+    margin: auto;
+}
+footer {
+    background-color: gray;
+}
+    footer .left,
+    footer .right {
+        width: 50%;
+        box-sizing: border-box;
+    }
+.left {
+    float: left;
+    text-align: left;
+}
+.right {
+    float: right;
+    text-align: right;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+.code {
+    font-family: monospace;
+}
+    div.code {
+        margin: 20px auto 20px auto;
+    }
+
+.error {
+    color: red;
+}
+
+.placeholder {
+    clear: both;
+    overflow: hidden;
+}

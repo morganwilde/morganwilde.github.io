@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="pages.css">
+    <link rel="stylesheet" type="text/css" href="Point.css">
+    <link rel="stylesheet" type="text/css" href="Grid.css">
+    <script src="Template.js"></script>
+    <script src="Point.js"></script>
+    <script src="Grid.js"></script>
+    <script src="page-4.js"></script>
+    <title>Linear functions</title>
+</head>
+<body>
+    <header></header>
+
+    <h2>Automation</h2>
+
+    <p>
+        With the grid from the previous section, we can visualise a collection of points, and we can activate them to change their color. But if you wanted to draw lines, you would have to activate each point manually, which is tedious work. Ideally, we would only have to provide two points through which the line passes. The rest would be taken care of automatically.
+    </p>
+    <p>
+        For that we need a rule for selecting all the points inbetween the 2 given - a linear function.
+    </p>
+    <div class="code">
+        y = m*x + k
+    </div>
+    <p>
+        This function has 2 parameters:
+    </p>
+    <ul>
+        <li><span class="code">m</span> - slope</li>
+        <li><span class="code">k</span> - vertical coordinate intercept</li>
+    </ul>
+    <p>
+        Since we want to draw lines that include some point a and point b, we can find the 2 parameters as follows.
+    </p>
+    <div class="code">
+        a = (x1, y1)<br>
+        b = (x2, y2)<br>
+        deltaX = x2 - x1<br>
+        deltaY = y2 - y1<br>
+        <br>
+        m = deltaY / deltaX<br>
+        k = y1 - m * x1
+    </div>
+
+    <h2>Testing the function</h2>
+
+    <p>
+        We now have everything we need to interpolate a line between any two points. We can test it to see what sort of values does it produce. For this we'll be using a square grid of length 10, so x will go through all integer values between 0 and 9 (inclusive).
+    </p>
+    <div class="code">
+        Point a = (<input type="text" id="ax" />, <input type="text" id="ay" />)<br>
+        Point b = (<input type="text" id="bx" />, <input type="text" id="by" />)<br>
+        <input type="button" value="interpolate" id="interpolate" />
+    </div>
+    <table id="values">
+        <thead>
+            <tr>
+                <th>x</th><th>y</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Not all values are useful</h2>
+
+    <p>
+        Playing around with the function above, you might have noticed that not all values of y are useful. In fact, we can see how many values are useful. Set a to be a fixed point at the origin (0, 0) and checked all possible points b on this grid. Since the grid is a square of length 10, we have 100 possible combinations.
+    </p>
+    <table id="statistics">
+        <thead>
+            <tr>
+                <th>Category</th><th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Contains infinity</td><td></td>
+            </tr>
+            <tr>
+                <td>Contains non-integer numbers</td><td></td>
+            </tr>
+            <tr>
+                <td>Contains non-continuous y values</td><td></td>
+            </tr>
+            <tr>
+                <td>Good results</td><td></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <footer></footer>
+</body>
+</html>
